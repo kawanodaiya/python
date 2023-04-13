@@ -48,3 +48,54 @@ else:
 is_empty = None
 if is_empty is None:
     print('none')
+
+# while文
+count = 0
+while count < 5:
+    if count >= 6:
+        break
+    if count == 2:
+        count += 1
+        continue
+    print(count)
+    count += 1
+else:
+    print('done')
+
+# input関数
+# while True:
+#     word = input('Enter:')
+#     if word == 'ok':
+#         break
+#     print('next')
+
+#for文
+some_list = [1, 2, 3, 4, 5]
+for i in some_list:
+    if i >= 4:
+        break
+    if i == 2:
+        continue
+    print(i)
+else:
+    print('else')
+
+# range関数
+for i in range(5, 10):
+    print(i, 'hello')
+
+# enumerate関数
+for i, fruit in enumerate(['apple', 'banana', 'orange']):
+    print(i, fruit)
+
+# zip関数
+days = ['Mon', 'Tue', 'Wed']
+fruits = ['apple', 'banana', 'orange']
+drinks = ['coffee', 'tea', 'beer']
+for day,fruit,drink in zip(days, fruits, drinks):
+    print(day, fruit, drink)
+
+# 辞書をfor文で処理する
+d = {'x': 100, 'y': 200}
+for k, v in d.items():
+    print(k, ':', v)
