@@ -19,14 +19,14 @@ del person
 
 print('##########')
 
-class Person(object):
+import abc
+
+class Person(metaclass=abc.ABCMeta):
     def __init__(self, age=1):
         self.age = age
-    def drive(self):
-        if self.age >= 18:
-            print('ok')
-        else:
-            raise Exception('no')
+    @abc.abstractmethod
+    def drive(slef):
+        pass
 
 class Baby(Person):
     def __init__(self, age=1):
@@ -34,6 +34,8 @@ class Baby(Person):
             super().__init__(age)
         else:
             raise ValueError
+    def drive(self):
+        raise Exception('no')
 
 class Adult(Person):
     def __init__(self, age=18):
@@ -41,6 +43,9 @@ class Adult(Person):
             super().__init__(age)
         else:
             raise ValueError
+    def drive(self):
+        print('ok')
+
 baby = Baby()
 adult = Adult()
 
